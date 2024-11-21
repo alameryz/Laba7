@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One&display=swap');
+/*задаем стиль для всего документа, где outline - не обводить всякие 
+формочки*/
+*{
+	margin:0;
+	padding:0;
+    outline: none;
+}
+/*далее прописываем общий стиль для боди и штмл*/
+body, html {
+	width: 100%;
+	height: 100%;
+}
+/*теперь указываем более персонализированные стили для боди*/
+body {
+	background-color: #fafafa;
+	font-family: Trebuchet MS, Helvetica;
+}
+/*далее используем стили для нашей шапки width это ширина, она
+всегда должна быть 100% чтобы растягиваться padding это отступ*/
+header {
+	width: 100%;
+	padding: 10px 0.5% 0px 0.5%;
+	background: black;
+	float: left;
+	position: fixed; /*если скролим он скролится вместе со страницей*/
+}
+header #logo {
+	color: #fff;
+	cursor: pointer; /*при наведение активная мышка*/
+}
+header #logo span {
+	font-size: 1.7em;
+	line-height: 45px;
+	margin-left: 40px;
+   font-family: 'Suez one', serif;                                                                                                                                                                                                 
+}
+@media (min-width: 701px) {
+/*если минимальная ширина экрана 701 пиксель то будем применять след. стили*/
+#logo {
+	float: left;
+	width: 30%; /*будет занимать всего 30% на экране*/
+	font-size: 1.1em;
+}
+#about {
+	float: right;
+	width: 67%;
+}
+}
+@media (max-width: 700px) {
+/*если сайт будет больше чем 701 пиксель то будем применять след. стили*/
+#logo {
+	margin-top: 15px;
+	width: 100%; /*будет занимать всего 30% на экране*/
+	font-size: 1.5em;
+}
+#about {
+	float: left;
+	width: 100%;
+}
+}
+#about {
+	text-align: center;
+	font-size: 1em;
+	line-height: 40px;
+	margin-bottom: 10px;
+}
+#about > a {color: #fff; text-decoration: none;}
+#about > a:hover {
+	color: #b0b0b0;
+	text-decoration: underline;
+}
+/*хавер это стили при наведении мышкой*/
+#about > a:not(:last-child) {
+	/*это указывает что мы выбираем все ссылки кроме последней*/
+	margin-right: 7%;
+}
+
+/*теперь добавляем стили для шапки когда будет скролить*/
+/*стили для фиксированной шапки*/
+.fixed {
+	z-index: 5000; /*наша шапка перекрывает все*/
+	background-color: #fff;
+	opacity: .5;
+	border-bottom: 1px solid silver;
+}
+header.fixed #logo {
+	color: #343434;
+}
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color:#7c7c7c} 
+/*hover это всегда цвет при наведении мыши*/
+
+/*главный блок на сайте*/
+#top {
+	width: 100%;
+	background-image: url(mercedes.jpg);
+/*чтобы наложить на картинку свой еще один цвет смотри ниже*/
+    background-blend-mode: multiply;
+     background-color: #737373;
+    background-size: cover; /*растягиваем на всю ширину экрана картинку*/
+    text-align: center;
+    color: #fff; /*цвет всего текста в блоке*/
+}
+/*теперь мы создаем штуку которая поможет отображать текст нормально
+в любом разрешении экрана*/
+@media (min-width: 1001px) {
+	#top {
+		font-size: 3em;
+		height: 1000px;
+	}
+}
+
+@media (max-width: 1000px) and (min-width: 651px) {
+	#top {
+		font-size: 2em;
+		height: 600px;
+	}
+}
+@media (max-width: 650px) {
+	#top {
+		font-size: 1.3em;
+		padding-top: 50%;
+		height: 500px;
+	}
+}
+
+
+#top h1 {
+	padding-top: 20%; /*чтобы он находился по центру*/
+}
+#top h3 {
+	color: #ccc;
+}
+
+/*блок с возможностями*/
+#main {
+    padding: 50px 10%;
+    background-color: #f6f6f6;
+    color: #484848;
+    font-size: 1.3em;
+}
+
+.intro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.intro h2 {
+    width: 100%;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.text {
+    width: 48%;
+    color: #a0a0a0;
+    margin-bottom: 20px;
+}
+
+.imgbenz {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    background: #fafafa;
+    padding: 5px;
+    border: 2px solid silver;
+}
+
+@media (max-width: 768px) {
+    .intro, #overview {
+        padding: 20px 5%;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .img {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about {
+        margin-top: 10px;
+    }
+
+    #top {
+        padding: 30px 0;
+    }
+
+    #main, #overview {
+        padding: 20px 5%;
+    }
+
+    .imgbenz {
+        width: 100%;
+    }
+}
+
+
+
+#overview {
+float:left;
+background-image: 
+url(https://million-wallpapers.ru/wallpapers/5/15/525808012098959.jpg);
+background-color: #0f0800;
+background-blend-mode: multiply;
+background-size: cover;
+background-attachment: fixed;
+
+padding: 100px 0;
+width: 100%;
+text-align: center;
+color: #fff;
+}
+#overview h2 {font-size: 4em}
+#overview h4 {color: #ccc;font-size: 1.5em}
+
+#overview .img {
+float: left;
+width: 20%;
+margin-right: 5%;
+margin-top: 50px;
+}
+#overview .img1 {
+	float: left;
+	width: 20%;
+	margin-right: 5%;
+	margin-top: 50px;
+	}
+
+#overview .img:nth-child(odd) {
+margin-left: 18%;
+}
+#overview img {
+	background: #fafafa;
+	padding: 5px;
+	border: 2px solid silver;
+	float: left;
+	width: 100%;
+	max-width: 500px;
+}
+#overview span {
+	float: left;
+	width: 100%;
+	font-size: 2em;
+	margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+	#overview .img {
+		width: 80%!important;
+		margin-right: 0!important;
+		margin-left: 10%!important;
+	}
+}
+@media (max-width: 700px) {
+	#overview .img1 {
+		width: 80%!important;
+		margin-right: 0!important;
+		margin-left: 10%!important;
+	}
+}
+
+#contacts {
+	width: 100%;
+	float: left;
+	padding-bottom: 40px;
+	padding-top: 70px;
+	border-top: 4px solid #ccc;
+	background: #f4f4f4;
+	text-align: center;
+}
+
+.footer {
+    position: relative;
+    margin: 0;
+    display: flex;
+    background-color: #fafafa;
+    color: #fff;
+    width: 100%; /* Adjusted to 100% for responsiveness */
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center text horizontally */
+}
+
+.site {
+	color: #0f0800;
+}
+
