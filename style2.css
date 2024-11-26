@@ -35,6 +35,12 @@ header #logo span {
 	margin-left: 40px;
    font-family: 'Suez one', serif;                                                                                                                                                                                                 
 }
+#logo > a {color: #fff; text-decoration: none;}
+#logo > a:hover {
+	color: #b0b0b0;
+	text-decoration: underline;
+}
+
 @media (min-width: 701px) {
 /*если минимальная ширина экрана 701 пиксель то будем применять след. стили*/
 #logo {
